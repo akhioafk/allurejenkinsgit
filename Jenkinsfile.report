@@ -7,9 +7,6 @@ pipeline {
                 copyArtifacts (
                     projectName: 'asd2',
                     selector: lastCompleted(),
-                    filter: 'allure-results/*.*',
-                    target: 'allure-results',
-                    fingerprintArtifacts: true
                 )
             }
         }
