@@ -1,0 +1,2 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","91065","Search on Google and verify results","Allure Example Suite","Tue Jun 30 15:26:33 QYZT 2026","passed","Tue Jun 30 15:28:04 QYZT 2026","com.example.AllureTestExample","Allure Tests","com.example.AllureTestExample","testGoogleSearch"
