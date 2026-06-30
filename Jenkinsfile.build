@@ -13,6 +13,7 @@ pipeline {
             }
         }
 
+
         stage('Build & Test') {
             steps {
                 sh 'mvn clean test'
@@ -22,14 +23,7 @@ pipeline {
 
     post {
         always {
-            // This publishes the Allure report in Jenkins
-            allure([
-                includeProperties: false,
-                jdk: '',
-                properties: [],
-                reportBuildPolicy: 'ALWAYS',
-                results: [[path: 'target/allure-results']]
-            ])
+            archiveArtifacts artifact: 'target/allure-results/*.*', allowEmptyArchive: true
         }
     }
 }

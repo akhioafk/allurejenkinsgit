@@ -1,0 +1,41 @@
+pipeline {
+    agent any
+
+    parameters {
+        string(name: 'BUILD_NUMBER', defaultValue: '', description: 'Build number to copy artifacts from')
+    }
+
+    stages {
+        stage('open artifacts') {
+            steps {
+                copyArtifacts (
+                    projectName: 'asd2',
+                    selector: specific(params.BUILD_NUMBER),
+                    filter: 'target/allure-results/*.*',
+                    target: 'allure-results',
+                    fingerprintArtifacts: true
+                )
+            }
+        }
+
+        stage ('generate allure report') {
+            steps {
+                allure includeProperties: false, results: [[path: 'allure-results']]
+            }
+        }
+    }
+
+    post {
+        always {
+            publishHTML([
+                allowMissing: false,
+                alwaysLinkToLastBuild: true,
+                keepAll: true,
+                reportDir: 'target/allure-report',
+                reportFiles: 'index.html',
+                reportName: 'Allure Report'
+            ])
+        }
+    }
+
+}
