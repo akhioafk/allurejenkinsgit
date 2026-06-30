@@ -6,7 +6,7 @@ pipeline {
             steps {
                 copyArtifacts (
                     projectName: 'asd2',
-                    selector: lastCompleted(),
+                    selector: lastCompleted()
                 )
             }
         }
