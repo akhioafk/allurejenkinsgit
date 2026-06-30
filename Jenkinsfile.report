@@ -24,18 +24,4 @@ pipeline {
             }
         }
     }
-
-    post {
-        always {
-            publishHTML([
-                allowMissing: false,
-                alwaysLinkToLastBuild: true,
-                keepAll: true,
-                reportDir: 'target/allure-report',
-                reportFiles: 'index.html',
-                reportName: 'Allure Report'
-            ])
-        }
-    }
-
 }
