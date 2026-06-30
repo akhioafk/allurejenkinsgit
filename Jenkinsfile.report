@@ -11,7 +11,7 @@ pipeline {
                 copyArtifacts (
                     projectName: 'asd2',
                     selector: specific(params.BUILD_NUMBER),
-                    filter: 'target/allure-results/*.*',
+                    filter: 'allure-results/*.*',
                     target: 'allure-results',
                     fingerprintArtifacts: true
                 )
