@@ -1,16 +1,12 @@
 pipeline {
     agent any
 
-    parameters {
-        string(name: 'BUILD_NUMBER', defaultValue: '', description: 'Build number to copy artifacts from')
-    }
-
     stages {
         stage('open artifacts') {
             steps {
                 copyArtifacts (
                     projectName: 'asd2',
-                    selector: specific(params.BUILD_NUMBER),
+                    selector: lastCompleted(),
                     filter: 'allure-results/*.*',
                     target: 'allure-results',
                     fingerprintArtifacts: true
