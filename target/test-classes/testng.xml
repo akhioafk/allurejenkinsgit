@@ -3,7 +3,7 @@
 <suite name="Allure Example Suite">
     <test name="Allure Tests">
         <classes>
-            <class name="com.example.AllureTestExample"/>
+            <class name="com.example.Some"/>
         </classes>
     </test>
 </suite>
