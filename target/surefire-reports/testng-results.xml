@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-06-30T15:43:30 QYZT" name="Allure Example Suite" finished-at="2026-06-30T15:45:17 QYZT" duration-ms="107465">
+  <suite started-at="2026-06-30T18:03:39 QYZT" name="Allure Example Suite" finished-at="2026-06-30T18:05:23 QYZT" duration-ms="103967">
     <groups>
     </groups>
-    <test started-at="2026-06-30T15:43:30 QYZT" name="Allure Tests" finished-at="2026-06-30T15:45:17 QYZT" duration-ms="107465">
+    <test started-at="2026-06-30T18:03:39 QYZT" name="Allure Tests" finished-at="2026-06-30T18:05:23 QYZT" duration-ms="103967">
       <class name="com.example.AllureTestExample">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.AllureTestExample@563a89b5]" started-at="2026-06-30T15:43:31 QYZT" name="setUp" finished-at="2026-06-30T15:43:45 QYZT" duration-ms="14289" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.AllureTestExample@1b15f922]" started-at="2026-06-30T18:03:40 QYZT" name="setUp" finished-at="2026-06-30T18:03:52 QYZT" duration-ms="12780" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testGoogleSearch()[pri:0, instance:com.example.AllureTestExample@563a89b5]" started-at="2026-06-30T15:43:45 QYZT" name="testGoogleSearch" description="Search on Google and verify results" finished-at="2026-06-30T15:45:16 QYZT" duration-ms="90387" status="PASS">
+        <test-method signature="testGoogleSearch()[pri:0, instance:com.example.AllureTestExample@1b15f922]" started-at="2026-06-30T18:03:53 QYZT" name="testGoogleSearch" description="Search on Google and verify results" finished-at="2026-06-30T18:05:22 QYZT" duration-ms="89857" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testGoogleSearch -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.AllureTestExample@563a89b5]" started-at="2026-06-30T15:45:16 QYZT" name="tearDown" finished-at="2026-06-30T15:45:17 QYZT" duration-ms="1396" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.AllureTestExample@1b15f922]" started-at="2026-06-30T18:05:22 QYZT" name="tearDown" finished-at="2026-06-30T18:05:23 QYZT" duration-ms="829" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
