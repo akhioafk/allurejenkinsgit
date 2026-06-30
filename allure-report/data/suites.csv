@@ -1,2 +1,4 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","91065","Search on Google and verify results","Allure Example Suite","Tue Jun 30 15:26:33 QYZT 2026","passed","Tue Jun 30 15:28:04 QYZT 2026","com.example.AllureTestExample","Allure Tests","com.example.AllureTestExample","testGoogleSearch"
+"","32","Another test method","Default Suite","Tue Jun 30 15:42:45 QYZT 2026","failed","Tue Jun 30 15:42:45 QYZT 2026","com.example.Some","TestNGTest-0a938a09-edfb-4cf4-b867-665818a36e88","com.example.Some","anotherTestMethod"
+"","90284","Search on Google and verify results","Allure Example Suite","Tue Jun 30 15:43:46 QYZT 2026","passed","Tue Jun 30 15:45:16 QYZT 2026","com.example.AllureTestExample","Allure Tests","com.example.AllureTestExample","testGoogleSearch"
+"","1","Test method","Default Suite","Tue Jun 30 15:42:45 QYZT 2026","passed","Tue Jun 30 15:42:45 QYZT 2026","com.example.Some","TestNGTest-0a938a09-edfb-4cf4-b867-665818a36e88","com.example.Some","testMethod"

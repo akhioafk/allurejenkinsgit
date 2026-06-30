@@ -12,6 +12,9 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- AspectJ version (used in both dependency and argLine) -->
+        <aspectjweaver.version>1.9.22</aspectjweaver.version>
     </properties>
 
     <dependencies>
@@ -35,13 +38,15 @@
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-testng</artifactId>
             <version>2.27.0</version>
+            <scope>test</scope>
         </dependency>
 
-        <!-- AspectJ for @Step annotation -->
+        <!-- AspectJ Weaver (required for @Step annotation) -->
         <dependency>
             <groupId>org.aspectj</groupId>
-            <artifactId>aspectjrt</artifactId>
-            <version>1.9.22</version>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectjweaver.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -55,9 +60,9 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
-                    <argLine>
-                        -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/1.9.22/aspectjweaver-1.9.22.jar
-                    </argLine>
+
+                    <!-- Fixed javaagent configuration for Jenkins/CI -->
+                    <argLine>-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectjweaver.version}/aspectjweaver-${aspectjweaver.version}.jar"</argLine>
                 </configuration>
             </plugin>
         </plugins>
