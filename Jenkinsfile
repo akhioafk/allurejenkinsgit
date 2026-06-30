@@ -2,45 +2,34 @@ pipeline {
     agent any
 
     tools {
-        maven 'maven 3.9'          
-        jdk 'jdk 17'              
+        jdk 'jdk 17'
+        maven 'maven 3.9'
     }
 
     stages {
-        stage('checkout git') {
+        stage('Checkout') {
             steps {
                 checkout scm
             }
         }
 
-        stage('build test') {
+        stage('Build & Test') {
             steps {
-                sh 'mvn clean test -Dtest=AllureTestExample'
-            }
-        }
-
-        stage('Generate Allure Report') {
-            steps {
-                echo 'Publishing Allure Report'
-            }
-            post {
-                always {
-                    allure([
-                        includeProperties: false,
-                        jdk: '',
-                        properties: [],
-                        reportBuildPolicy: 'ALWAYS',
-                        results: [[path: 'target/allure-results']]
-                    ])
-                }
+                sh 'mvn clean test'
             }
         }
     }
 
     post {
         always {
-            archiveArtifacts artifacts: 'target/allure-results/**', allowEmptyArchive: true
-            archiveArtifacts artifacts: 'target/allure-report/**', allowEmptyArchive: true
+            // This publishes the Allure report in Jenkins
+            allure([
+                includeProperties: false,
+                jdk: '',
+                properties: [],
+                reportBuildPolicy: 'ALWAYS',
+                results: [[path: 'target/allure-results']]
+            ])
         }
     }
 }
